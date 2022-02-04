@@ -32,7 +32,8 @@ export default {
 
 <style scoped>
   .nav-bar {
-    background: whitesmoke;
+    /* background: whitesmoke; */
+    background-color: #333333;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -46,6 +47,7 @@ export default {
 .logo h1 {
     margin: 0;
     font-size: 30px;
+    color: white;
 }
 
 input[type=text] {
@@ -73,13 +75,14 @@ input[type=submit] {
 
 .nav-bar a {
     text-decoration: none;
-    padding:  30px 5px;
+    padding:  32px 5px;
     color: green;
     transition: .3s ease;
 }
 
 .nav-bar a:hover {
     color: rgb(255, 83, 83);
+    background: #444;
 }
 
 .dropdown {
@@ -91,7 +94,7 @@ input[type=submit] {
     position: absolute;
     display: none;
     z-index: 1;
-    background: whitesmoke;
+    background: #333;
     width: 130px;
     top: 51px;
 }
@@ -117,7 +120,6 @@ input[type=submit] {
         padding: 8px 10px;
         display: block;
         flex: 100%;
-        background-color: #333333;
         text-align: center;
     }
     .dropdown {
@@ -127,7 +129,7 @@ input[type=submit] {
          position: relative;
          display: block;
          z-index: 1;
-         background: whitesmoke;
+         background-color: #333333;
          width: 100%;
          top: 0;
     }
@@ -137,12 +139,8 @@ input[type=submit] {
     .search-bar {
         padding: 5px;
         text-align: right;
+        background: whitesmoke;
     }
-
-    .links a:hover {
-        background: #444;
-    }
-
 }
 
 </style>
