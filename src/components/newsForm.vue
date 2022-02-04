@@ -1,13 +1,16 @@
 <template>
-    <form>
+    <form @submit.prevent="onSubmit">
         <h2>NewsNews Update</h2>
         <div class="field">
             <label for="Title">News Title:</label>
-            <p><input type="text" id="Title" placeholder="News title here"></p>
+            <p><input type="text" id="Title" 
+            placeholder="News title here" v-model="title"
+            required></p>
         </div>
         <div class="field">
             <label for="headline">News Headline:</label>
-            <p><textarea id="headline" placeholder="Headline here"></textarea></p>
+            <p><textarea id="headline" placeholder="Headline here"
+            v-model="headline" required></textarea></p>
         </div>
         <div class="field submit">
             <input type="submit" value="Post">
@@ -18,6 +21,47 @@
 <script>
 export default {
     name: 'newsForm',
+    props: ['newsDetails'],
+    data() {
+        return {
+            title: null,
+            headline: null,
+        }
+    },
+    methods: {
+        onSubmit() {
+            let newsDetails = {
+                id: this.idGenerator,
+                title: this.title,
+                headline: this.headline,
+            }
+            this.$emit('details-submitted', newsDetails)
+            this.title= null
+            this.headline=null
+        }
+    },
+    computed: {
+        idGenerator(){
+            let t = true
+            let id = 0
+            let idlist = []
+            for (let news in this.newsDetails){
+                idlist.push(news.id)
+            }
+            while (t){
+                let rand = Math.floor(Math.random() * 100)
+                for (let i in idlist){
+                    if (rand == i){
+                        t = true
+                        break;
+                    }
+                    t = false
+                    id = rand
+                }
+            }
+            return id
+        },
+    }
     
 }
 </script>
@@ -27,10 +71,11 @@ export default {
       width: 50%;
       border: 1px solid green;
       margin: auto;
+      margin-top: 20px;
       padding: 15px;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 
       0 3px 10px 0 rgba(0, 0, 0, 0.19);
-      display: none;
+      /* display: none; */
   }
 
   input[type=text] {
