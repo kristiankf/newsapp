@@ -1,5 +1,6 @@
 <template>
     <div class="news">
+        <button class="delete">x</button>
         <div class="imagecontainer">
             <a href="#">
                 <img :src='img' alt="News Image">
@@ -38,6 +39,24 @@ export default {
       text-overflow: ellipsis;
       word-break: break-all;
       flex: 47%;
+      position: relative;
+  }
+
+  .delete {
+      border-radius: 50%;
+      color: white;
+      width: 25px;
+      height: 25px;
+      border: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      cursor: pointer;
+  }
+
+  .delete:active {
+      background: rgb(240, 131, 131);
   }
 
   .imagecontainer {

@@ -3,6 +3,7 @@
     <Header />
     <Navbar />
     <NewsSection  :img = "image" />
+    <Footer />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import Navbar from './components/navbar.vue'
 import Header from './components/appHeader.vue'
 import NewsSection from './components/newsSection.vue'
+import Footer from './components/footer.vue'
 
 export default {
   name: 'App',
@@ -18,11 +20,17 @@ export default {
     Navbar,
     Header,
     NewsSection,
+    Footer,
   },
 
   data() {
     return {
       image: './logo.png',
+      news: [{
+        image: '.logo.png',
+        headline: 'headline',
+        newContent: ''
+      }]
     }
   }
 }
