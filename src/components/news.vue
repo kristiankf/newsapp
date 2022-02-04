@@ -7,7 +7,7 @@
             </a>    
         </div>
         <div class="headline">
-          <a href="#"> {{ news }}</a>
+          <a href="#"> {{ newsSnippet }}</a>
         </div>
     </div>
 </template>
@@ -15,7 +15,7 @@
 <script>
 export default {
     name: 'News',
-    props: ["img"],
+    props: ["img", "newsContent"],
     data() {
         return {
             news: "Lorem ipsum dolor sit amet, \
@@ -23,6 +23,11 @@ export default {
              dolor necessitatibus amet inventore.\
               Voluptatem incidunt harum reiciendis \
               aperiam doloribus assumendalskjljdlfjl lksjdlfjs ljdflkjs dlfjslkdj lskdjlf sdkjfls kdf",
+        }
+    },
+    computed: {
+        newsSnippet() {
+            return this.newsContent.title + ": " + this.newsContent.headline
         }
     }
 }
@@ -70,7 +75,7 @@ export default {
       transition: .4s ease-in-out;
   }
   .headline {
-      /* text-align: justify; */
+      /* height: 350px; */
       font-weight: 700;
       font-family: Garamond, serif;
   }

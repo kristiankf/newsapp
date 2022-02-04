@@ -1,8 +1,11 @@
 <template>
     <div class="news-container">
-      <News :img = "img" />
-      <News :img = "img"/>
-      <News :img = "img"/>
+      <News v-for="news in newsDetails"
+       :key='news.id' 
+       :img="img" 
+       :newsContent="news" />
+      <!-- <News :img = "img" />
+      <News :img = "img" /> -->
     </div>
 </template>
 
@@ -11,7 +14,7 @@ import News from './news.vue'
 
 export default {
     name: 'NewsSection',
-    props: ["img"],
+    props: ["img", "newsDetails"],
     components: {
         News,
     }

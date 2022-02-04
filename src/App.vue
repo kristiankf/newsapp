@@ -2,8 +2,8 @@
   <div id="app">
     <Header />
     <Navbar />
-    <NewsForm />
-    <NewsSection  :img = "image" />
+    <NewsForm @details-submitted="addNews" :newsDetails="newsDetails"/>
+    <NewsSection  :img="image" :newsDetails="newsDetails"/>
     <Footer />
   </div>
 </template>
@@ -30,11 +30,29 @@ export default {
   data() {
     return {
       image: './logo.png',
-      news: [{
+      newsDetails: [{
+        title: 'News 1',
         id: 1,
         headline: 'headline',
         newContent: ''
-      }]
+      },
+      {
+        title: 'News 2',
+        id: 2,
+        headline: 'haha',
+        newcontent: ''
+      },
+      // {
+      //   id: 3,
+      //   headline: 'haha',
+      //   newContent: ''
+      // }
+      ]
+    }
+  },
+  methods: {
+    addNews(newsDetails) {
+      this.newsDetails.push(newsDetails)
     }
   }
 }
