@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <Header />
-    <Navbar @show-form="showForm"/>
+    <Navbar @show-form="showForm" @show-delete-button="showDelete" />
     <NewsForm @details-submitted="addNews" 
-    :newsDetails="newsDetails" v-if = 'show' />
-    <NewsSection  :img="image" :newsDetails="newsDetails"/>
+    :newsDetails="newsDetails" v-if = 'showNewsForm' />
+    <NewsSection  :img="image" :newsDetails="newsDetails" :showDeleteButton="showDeleteButton"/>
     <Footer />
   </div>
 </template>
@@ -31,7 +31,8 @@ export default {
   data() {
     return {
       image: './logo.png',
-      show: false,
+      showNewsForm: false,
+      showDeleteButton: false,
       newsDetails: [{
         title: 'News 1',
         id: 1,
@@ -57,7 +58,10 @@ export default {
       this.newsDetails.push(newsDetails)
     },
     showForm(show) {
-      this.show = show
+      this.showNewsForm = show
+    },
+    showDelete(show) {
+      this.showDeleteButton = show
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="news">
-        <button class="delete">x</button>
+        <button class="delete" v-if="showDelete">x</button>
         <div class="imagecontainer">
             <a href="#">
                 <img :src='img' alt="News Image">
@@ -15,7 +15,7 @@
 <script>
 export default {
     name: 'News',
-    props: ["img", "newsContent"],
+    props: ["img", "newsContent", "showDelete"],
     data() {
         return {
             news: "Lorem ipsum dolor sit amet, \

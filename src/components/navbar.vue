@@ -9,7 +9,7 @@
                 <a href="javascript:void(0)">My News</a>
                     <div class="dropdown-content">
                         <a href="#" @click="showForm">Add News</a>
-                        <a href="#">Delete News</a>
+                        <a href="#" @click="showDelete">Delete News</a>
                     </div>
             </div>
             <a href="#">Trending</a>
@@ -32,6 +32,12 @@ export default {
         showForm (){
             this.show = true
             this.$emit('show-form', this.show)
+            this.show = false
+        },
+        showDelete (){
+            this.show = true
+            this.$emit('show-delete-button', this.show)
+            this.show = false
         }
     }
 }
