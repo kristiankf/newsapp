@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <Header />
-    <Navbar />
-    <NewsForm @details-submitted="addNews" :newsDetails="newsDetails"/>
+    <Navbar @show-form="showForm"/>
+    <NewsForm @details-submitted="addNews" 
+    :newsDetails="newsDetails" v-if = 'show' />
     <NewsSection  :img="image" :newsDetails="newsDetails"/>
     <Footer />
   </div>
@@ -30,6 +31,7 @@ export default {
   data() {
     return {
       image: './logo.png',
+      show: false,
       newsDetails: [{
         title: 'News 1',
         id: 1,
@@ -53,6 +55,9 @@ export default {
   methods: {
     addNews(newsDetails) {
       this.newsDetails.push(newsDetails)
+    },
+    showForm(show) {
+      this.show = show
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <nav class="nav-bar">
+        <nav class="nav-bar">
         <div class="logo">
             <h1>NewsNews</h1>
         </div>
@@ -8,7 +8,7 @@
             <div class="dropdown">
                 <a href="javascript:void(0)">My News</a>
                     <div class="dropdown-content">
-                        <a href="#">Add News</a>
+                        <a href="#" @click="showForm">Add News</a>
                         <a href="#">Delete News</a>
                     </div>
             </div>
@@ -26,7 +26,14 @@
 
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    show: false,
+    methods: {
+        showForm (){
+            this.show = true
+            this.$emit('show-form', this.show)
+        }
+    }
 }
 </script>
 
