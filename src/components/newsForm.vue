@@ -46,6 +46,10 @@ export default {
             let id = 0
             let idlist = []
             for (let news in this.newsDetails){
+                if (idlist.length == 0){
+                    id = 1
+                    return id
+                }
                 idlist.push(news.id)
             }
             while (t){

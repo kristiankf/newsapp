@@ -4,7 +4,9 @@
     <Navbar @show-form="showForm" @show-delete-button="showDelete" />
     <NewsForm @details-submitted="addNews" 
     :newsDetails="newsDetails" v-if = 'showNewsForm' />
-    <NewsSection  :img="image" :newsDetails="newsDetails" :showDeleteButton="showDeleteButton"/>
+    <NewsSection  :img="image" :newsDetails="newsDetails" 
+    :showDeleteButton="showDeleteButton"
+    @del-news="deleteNews" />
     <Footer />
   </div>
 </template>
@@ -62,6 +64,9 @@ export default {
     },
     showDelete(show) {
       this.showDeleteButton = show
+    },
+    deleteNews(id) {
+      this.newsDetails = this.newsDetails.filter(news => news.id !== id)
     }
   }
 }

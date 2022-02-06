@@ -4,7 +4,8 @@
        :key='news.id' 
        :img="img" 
        :newsContent="news" 
-       :showDelete="showDeleteButton" />
+       :showDelete="showDeleteButton" 
+       @del-news="$emit('del-news', news.id)"/>
       <!-- <News :img = "img" />
       <News :img = "img" /> -->
     </div>

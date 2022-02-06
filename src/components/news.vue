@@ -1,6 +1,6 @@
 <template>
     <div class="news">
-        <button class="delete" v-if="showDelete">x</button>
+        <button class="delete" v-if="showDelete" @click="$emit('del-news')">x</button>
         <div class="imagecontainer">
             <a href="#">
                 <img :src='img' alt="News Image">
