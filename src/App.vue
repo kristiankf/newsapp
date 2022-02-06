@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <Header />
-    <Navbar />
-    <NewsForm @details-submitted="addNews" :newsDetails="newsDetails"/>
-    <NewsSection  :img="image" :newsDetails="newsDetails"/>
+    <Navbar @show-form="showForm" @show-delete-button="showDelete" />
+    <NewsForm @details-submitted="addNews" 
+    :newsDetails="newsDetails" v-if = 'showNewsForm' />
+    <NewsSection  :img="image" :newsDetails="newsDetails" 
+    :showDeleteButton="showDeleteButton"
+    @del-news="deleteNews" />
     <Footer />
   </div>
 </template>
@@ -30,6 +33,8 @@ export default {
   data() {
     return {
       image: './logo.png',
+      showNewsForm: false,
+      showDeleteButton: false,
       newsDetails: [{
         title: 'News 1',
         id: 1,
@@ -53,6 +58,15 @@ export default {
   methods: {
     addNews(newsDetails) {
       this.newsDetails.push(newsDetails)
+    },
+    showForm(show) {
+      this.showNewsForm = show
+    },
+    showDelete(show) {
+      this.showDeleteButton = show
+    },
+    deleteNews(id) {
+      this.newsDetails = this.newsDetails.filter(news => news.id !== id)
     }
   }
 }

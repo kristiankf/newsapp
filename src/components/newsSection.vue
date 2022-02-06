@@ -3,7 +3,9 @@
       <News v-for="news in newsDetails"
        :key='news.id' 
        :img="img" 
-       :newsContent="news" />
+       :newsContent="news" 
+       :showDelete="showDeleteButton" 
+       @del-news="$emit('del-news', news.id)"/>
       <!-- <News :img = "img" />
       <News :img = "img" /> -->
     </div>
@@ -14,7 +16,7 @@ import News from './news.vue'
 
 export default {
     name: 'NewsSection',
-    props: ["img", "newsDetails"],
+    props: ["img", "newsDetails", "showDeleteButton"],
     components: {
         News,
     }
