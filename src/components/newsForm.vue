@@ -43,27 +43,30 @@ export default {
     computed: {
         idGenerator(){
             let t = true
-            let id = 0
+            let id
             let idlist = []
-            for (let news in this.newsDetails){
-                if (idlist.length == 0){
-                    id = 1
-                    return id
-                }
-                idlist.push(news.id)
+           
+            if (this.newsDetails.length == 0){
+                id = 1
+                return id
             }
-            while (t){
-                let rand = Math.floor(Math.random() * 100)
-                for (let i in idlist){
-                    if (rand == i){
-                        t = true
-                        break;
+            else {
+                for (let news in this.newsDetails){
+                  idlist.push(news.id)
+                }
+                while (t){
+                    let rand = Math.floor(Math.random() * 100)
+                    for (let i in idlist){
+                        if (rand == idlist[i]){
+                            t = true
+                            break;
+                        }
+                        t = false
+                        id = rand
                     }
-                    t = false
-                    id = rand
                 }
-            }
             return id
+            }  
         },
     }
     

@@ -47,11 +47,12 @@ export default {
         headline: 'haha',
         newcontent: ''
       },
-      // {
-      //   id: 3,
-      //   headline: 'haha',
-      //   newContent: ''
-      // }
+      {
+        title: "yes",
+        id: 3,
+        headline: 'haha',
+        newContent: ''
+      }
       ]
     }
   },
