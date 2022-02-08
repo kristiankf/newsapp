@@ -30,5 +30,7 @@ export default {
       justify-content: space-between;
       flex-wrap: wrap;
       padding: 20px;
+      max-width: 1300px;
+      margin: auto;
   }
 </style>

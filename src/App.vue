@@ -18,6 +18,7 @@ import Header from './components/appHeader.vue'
 import NewsSection from './components/newsSection.vue'
 import Footer from './components/footer.vue'
 import NewsForm from './components/newsForm.vue'
+import newsimage1 from '@/assets/newsimage1.jpg'
 
 
 export default {
@@ -32,7 +33,7 @@ export default {
 
   data() {
     return {
-      image: './logo.png',
+      image: newsimage1,
       showNewsForm: false,
       showDeleteButton: false,
       newsDetails: [{

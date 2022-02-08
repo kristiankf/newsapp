@@ -1,9 +1,10 @@
 <template>
+
     <div class="news">
         <button class="delete" v-if="showDelete" @click="$emit('del-news')">x</button>
         <div class="imagecontainer">
             <a href="#">
-                <img :src='img' alt="News Image">
+                <img :src="img" alt="News Image">
             </a>    
         </div>
         <div class="headline">
@@ -70,7 +71,7 @@ export default {
   }
 
   .imagecontainer img {
-      width: 80%;
+      width: 90%;
       height: 90%;
       transition: .4s ease-in-out;
   }
