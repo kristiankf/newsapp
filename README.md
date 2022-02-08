@@ -1,6 +1,6 @@
 # newsapp
 **********     Project     **********
- A basic news application (NEWSNEWS)
+ * A basic news application (NEWSNEWS)
 
  **********     Overview     **********
  This is a simple looking news application created with vue.js where a user can read news, delete news and add news on the app. This project is to help me understand how vue.js works and also to improve on my web development skills.
@@ -13,7 +13,7 @@
 This web app is composed of an App.vue component and six other components (details below). Let's go through individual components to better understand how they combine to work as a unit
 
 ----- App.vue -----
-This is the component in which most of the other components are imported into. It contains data that accessible to the other conponents through props based on which functionalities are executed
+- This is the component in which most of the other components are imported into. It contains data that accessible to the other conponents through props based on which functionalities are executed
 
 ----- navbar.vue -----
 Here acts as the navigation center (obviously :)). It contain tabs that helps you navigate the app. (Some of the tabs haven't been assigned functionalities yet except for the 'My News' tab).
