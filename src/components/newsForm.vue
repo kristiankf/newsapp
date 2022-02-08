@@ -75,7 +75,7 @@ export default {
 
 <style scoped>
   form {
-      width: 50%;
+      width: 40%;
       border: 1px solid green;
       margin: auto;
       margin-top: 20px;

@@ -20,7 +20,6 @@ export default {
     components: {
         News,
     }
-    
 }
 </script>
 
@@ -30,7 +29,11 @@ export default {
       justify-content: space-between;
       flex-wrap: wrap;
       padding: 20px;
-      max-width: 1300px;
       margin: auto;
+  }
+  @media screen and (min-width: 1300px) {
+    .news-container {
+      width: 80%;
+    }
   }
 </style>
