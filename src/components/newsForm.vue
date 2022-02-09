@@ -122,4 +122,11 @@ export default {
       border: 1px solid red;
       outline: none;
   }
+
+  @media screen and (max-width: 706px) {
+      form {
+          width: 90%;
+          
+      }
+  }
 </style>
